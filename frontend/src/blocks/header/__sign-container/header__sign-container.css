@@ -1,0 +1,6 @@
+.header__sign-container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 0 0 46px;
+}

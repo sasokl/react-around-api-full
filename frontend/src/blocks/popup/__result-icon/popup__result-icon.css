@@ -1,0 +1,8 @@
+.popup__result-icon {
+  align-self: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 120px;
+  height: 120px;
+  margin: 14px 0 40px 0;
+}

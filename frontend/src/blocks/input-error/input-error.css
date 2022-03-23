@@ -1,0 +1,10 @@
+.input-error {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  height: 30px;
+  opacity: 0;
+  padding: 5px 0 0;
+  color: var(--error-color);
+}

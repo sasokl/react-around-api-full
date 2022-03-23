@@ -1,0 +1,7 @@
+.variables {
+  --card-text: #000000;
+  --error-color: #FF0000;
+  --link-transition: opacity .3s linear;
+  --hovered-link-opacity: .6;
+  --hovered-popup-submit-button-opacity: .8;
+}

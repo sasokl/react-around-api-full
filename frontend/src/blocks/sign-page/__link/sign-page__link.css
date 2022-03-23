@@ -1,0 +1,11 @@
+.sign-page__link {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  transition: var(--link-transition);
+}
+
+.sign-page__link:hover {
+  opacity: var(--hovered-link-opacity)
+}
+
