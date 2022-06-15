@@ -11,14 +11,10 @@ frontend/node_modules
 .npm
 
 # System files and IDE settings folders
+build
 .DS_Store
 ../.idea
 .idea
 .vscode
-public
-src
 .gitignore
-package.json
-package-lock.json
-README.md
 .env
