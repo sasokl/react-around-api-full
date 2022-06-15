@@ -147,7 +147,7 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: "http://localhost:3000",
+  baseUrl: "https://ab-proj15.students.nomoreparties.sbs/",
   headers: {
     'Content-Type': 'application/json',
     authorization: `Bearer ${localStorage.getItem('jwt')}`
