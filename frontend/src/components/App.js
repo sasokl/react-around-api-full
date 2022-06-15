@@ -89,9 +89,7 @@ function App(props) {
 
 
   function handleCardLike(card) {
-    console.log(card);
     const isLiked = card.likes.some(item => item === currentUser._id);
-    console.log(isLiked);
 
     api.changeLikeCardStatus(card._id, isLiked)
       .then((newCard) => {

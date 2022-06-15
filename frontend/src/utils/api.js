@@ -105,7 +105,6 @@ class Api {
    * @returns {Promise<never>}
    */
   likeCard(cardID) {
-    console.log('liked');
     return fetch(`${this._baseUrl}/cards/${cardID}/likes`, {
       method: "PUT",
       headers: this._headers,
@@ -119,7 +118,6 @@ class Api {
    * @returns {Promise<never>}
    */
   unlikeCard(cardID) {
-    console.log('disliked');
     return fetch(`${this._baseUrl}/cards/${cardID}/likes`, {
       method: "DELETE",
       headers: this._headers,
@@ -147,7 +145,7 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: "https://ab-proj15.students.nomoreparties.sbs",
+  baseUrl: "https://api.ab-proj15.students.nomoreparties.sbs",
   headers: {
     'Content-Type': 'application/json',
     authorization: `Bearer ${localStorage.getItem('jwt')}`
