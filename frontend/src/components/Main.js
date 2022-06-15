@@ -39,7 +39,7 @@ function Main({cards, onEditAvatarClick, onEditProfileClick, onAddCardClick, onC
           className="profile__add-button"/>
       </section>
       <section className="cards">
-        {cards.reverse().map(cardItem => {
+        {cards.slice(0).reverse().map(cardItem => {
           return (
             <Card
               key={cardItem._id}
