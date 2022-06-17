@@ -1,6 +1,7 @@
 const Card = require('../models/card');
 const NotFoundError = require('../errors/not-found-err');
 const BadRequestErr = require('../errors/bad-request-err');
+const ForbiddenErr = require('../errors/forbidden-err');
 
 module.exports.getCards = (req, res, next) => Card.find({})
   .then((cards) => res.send({ data: cards }))
@@ -17,15 +18,20 @@ module.exports.createCard = (req, res, next) => {
     });
 };
 
-module.exports.deleteCard = (req, res, next) => Card.findByIdAndDelete(req.params.cardId)
-  .orFail(() => {
-    throw new NotFoundError('No card found with that id');
-  })
-  .then((card) => res.send({ data: card }))
-  .catch((err) => {
-    if (err.name === 'CastError') next(new BadRequestErr('Some of card fields are wrong.'));
-    else next(err);
-  });
+module.exports.deleteCard = (req, res, next) => {
+  Card.findByIdAndDelete(req.params.cardId)
+    .orFail(() => {
+      throw new NotFoundError('No card found with that id');
+    })
+    .then((card) => {
+      if (card.owner.equals(req.user._id)) res.send({ data: card });
+      else throw new ForbiddenErr('You do not have permission to access this resource.');
+    })
+    .catch((err) => {
+      if (err.name === 'CastError') next(new BadRequestErr('Some of card fields are wrong.'));
+      else next(err);
+    });
+};
 
 module.exports.likeCard = (req, res, next) => Card.findByIdAndUpdate(
   req.params.cardId,

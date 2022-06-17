@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 const NotFoundError = require('../errors/not-found-err');
 const BadRequestErr = require('../errors/bad-request-err');
-const UnauthorizedErr = require("../errors/unauthorized-err");
+const UnauthorizedErr = require('../errors/unauthorized-err');
 
 require('dotenv').config();
 
