@@ -115,7 +115,7 @@ function App(props) {
   const handleAddPlace = (card) => {
     return api.addCard(card.name, card.link)
       .then(newCard => {
-        setCards([newCard.data , ...cards]);
+        setCards([...cards, newCard.data]);
       });
   }
 
