@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "lint": "npx eslint ."
+    "lint": "npx eslint .",
+    "deploy": "scp -r ./* devsasokl@ab-proj15.students.nomoreparties.sbs:/home/devsasokl/react-around-api-full/backend"
   },
   "repository": {
     "type": "git",
