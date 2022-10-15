@@ -18,7 +18,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build && npm run build && scp -r ./build/* devsasokl@ab-proj15.students.nomoreparties.sbs:/home/devsasokl/react-around-api-full/frontend"
+    "deploy": "gh-pages -d build && npm run build && scp -r ./build/* devsasokl@ab-proj15.students.nomoredomainssbs.ru:/home/devsasokl/react-around-api-full/frontend"
   },
   "eslintConfig": {
     "extends": [
