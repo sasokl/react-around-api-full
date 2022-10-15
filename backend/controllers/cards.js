@@ -13,7 +13,7 @@ module.exports.createCard = (req, res, next) => {
   Card.create({ name, link, owner: req.user._id })
     .then((card) => res.send({ data: card }))
     .catch((err) => {
-      if (err.name === 'ValidationError') next(new BadRequestErr('Invalid data in user\'s profile fields'));
+      if (err.name === 'ValidationError') next(new BadRequestErr('Invalid data in card\'s fields'));
       else next(err);
     });
 };
@@ -21,7 +21,7 @@ module.exports.createCard = (req, res, next) => {
 module.exports.deleteCard = (req, res, next) => {
   Card.findByIdAndDelete(req.params.cardId)
     .orFail(() => {
-      throw new NotFoundError('No card found with that id');
+      throw new NotFoundError();
     })
     .then((card) => {
       if (card.owner.equals(req.user._id)) res.send({ data: card });

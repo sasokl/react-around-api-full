@@ -1,4 +1,4 @@
-import {Redirect, Route, Switch, withRouter} from 'react-router-dom';
+import { Route, Switch, withRouter} from 'react-router-dom';
 import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
@@ -41,7 +41,7 @@ function App(props) {
 
   useEffect(() => {
     checkToken();
-  }, []);
+  }, [isLoggedIn]);
 
   useEffect(() => {
     if (isLoggedIn)
@@ -111,7 +111,6 @@ function App(props) {
         setCurrentUser(res.data);
       });
   }
-
   const handleAddPlace = (card) => {
     return api.addCard(card.name, card.link)
       .then(newCard => {
@@ -143,7 +142,6 @@ function App(props) {
           api.updateToken(res.token)
           setIsLoggedIn(true)
           setUserEmail(email);
-
         }
         return res;
       })

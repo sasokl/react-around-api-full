@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://api.ab-proj15.students.nomoreparties.sbs';
+export const BASE_URL = 'https://api.ab-proj15.students.nomoredomainssbs.ru/';
 
 export const register = (password, email) => {
     return fetch(`${BASE_URL}/signup`, {
