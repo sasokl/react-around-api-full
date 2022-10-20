@@ -1,6 +1,6 @@
 # Around U.S. (Back-End + Front-End)
 
-[Site Link](https://ab-proj15.students.nomoredomainssbs.ru)
+[Site Link](https://ab-proj15.students.nomoredomainssbs.ru)  
 [API Link](https://api.ab-proj15.students.nomoredomainssbs.ru)
 
 ## About
